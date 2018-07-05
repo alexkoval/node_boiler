@@ -1,0 +1,8 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "selector-max-id": 0,
+    "no-missing-end-of-source-newline": null,
+    "no-eol-whitespace": true
+  }
+}

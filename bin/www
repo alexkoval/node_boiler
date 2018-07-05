@@ -1,0 +1,35 @@
+#!/usr/bin/env node
+
+/* eslint import/no-nodejs-modules: "off" */
+/* eslint no-console: "off" */
+/* eslint no-process-exit: "off" */
+
+const http = require('http');
+const app = require('../app');
+const config = require('../config/index');
+
+app.set('port', config.server.port);
+
+const server = http.createServer(app);
+
+const onError = (error) => {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  switch (error.code) {
+  case 'EACCES':
+    console.error(`port ${config.server.port} requires elevated privileges`);
+    process.exit(1);
+    break;
+  case 'EADDRINUSE':
+    console.error(`port ${config.server.port} is already in use`);
+    process.exit(1);
+    break;
+  default:
+    throw error;
+  }
+};
+
+server.listen(config.server.port);
+server.on('error', onError);

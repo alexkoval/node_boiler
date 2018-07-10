@@ -1,6 +1,3 @@
-/* eslint import/no-named-as-default: "off" */
-/* eslint import/no-named-as-default-member: "off" */
-
 import { AppContainer } from 'react-hot-loader';
 import React from 'react';
 import ReactDOM from 'react-dom';

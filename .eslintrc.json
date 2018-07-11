@@ -447,7 +447,7 @@
     "react/no-will-update-set-state": "error",
 
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-direct-mutation-state.md
-    "react/no-direct-mutation-state": "off",
+    "react/no-direct-mutation-state": "error",
 
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-is-mounted.md
     "react/no-is-mounted": "error",
@@ -578,8 +578,8 @@
     "react/no-find-dom-node": "error",
 
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-component-props.md
-    "react/forbid-component-props": ["off", {
-      "forbid": []
+    "react/forbid-component-props": ["error", {
+      "forbid": ["className", "style"]
     }],
 
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-elements.md

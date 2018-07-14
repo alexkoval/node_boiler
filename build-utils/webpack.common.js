@@ -1,6 +1,6 @@
-/* eslint no-unused-vars: "off" */
+/* eslint xss/no-mixed-html: "off" */
 
-const webpack = require('webpack');
+const webpack = require('webpack'); // eslint-disable-line no-unused-vars
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const commonPaths = require('./common-paths');

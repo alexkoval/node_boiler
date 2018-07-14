@@ -9,7 +9,7 @@ const commonConfig = require('./build-utils/webpack.common');
 // We will see an example when we set up 'Bundle Analyzer'
 const addOns = (/* string | string[] */ addOnsArg) => {
   // Normalize array of addons (flatten)
-  const add = [...[addOnsArg]].filter(Boolean); // If add-ons is undefined, filter it out
+  const add = Array.from([addOnsArg]).filter(Boolean); // If add-ons is undefined, filter it out
 
   /* eslint global-require: "off" */
   return add.map(addName => require(`./build-utils/addons/webpack.${addName}.js`));

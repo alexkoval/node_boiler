@@ -1,12 +1,8 @@
 #!/usr/bin/env node
 
-/* eslint import/no-nodejs-modules: "off" */
-/* eslint no-console: "off" */
-/* eslint no-process-exit: "off" */
-
-const http = require('http');
+const http = require('http'); // eslint-disable-line import/no-nodejs-modules
 const app = require('../app');
-const config = require('../config/index');
+const config = require('../config/.');
 
 app.set('port', config.server.port);
 
@@ -19,12 +15,12 @@ const onError = (error) => {
 
   switch (error.code) {
   case 'EACCES':
-    console.error(`port ${config.server.port} requires elevated privileges`);
-    process.exit(1);
+    console.error(`port ${config.server.port} requires elevated privileges`); // eslint-disable-line no-console
+    process.exit(1); // eslint-disable-line no-process-exit
     break;
   case 'EADDRINUSE':
-    console.error(`port ${config.server.port} is already in use`);
-    process.exit(1);
+    console.error(`port ${config.server.port} is already in use`); // eslint-disable-line no-console
+    process.exit(1); // eslint-disable-line no-process-exit
     break;
   default:
     throw error;

@@ -1,11 +1,9 @@
-/* eslint no-process-env: "off" */
-
 module.exports = {
   env: {
     name: 'development'
   },
   server: {
-    port: parseInt(process.env.PORT, 10) || 3001
+    port: parseInt(process.env.PORT, 10) || 3001 // eslint-disable-line no-process-env
   },
   pages: {
     notFound: {

@@ -1,12 +1,10 @@
-/* eslint no-process-env: "off" */
-
 const stgConfig = require('./staging');
 const prodConfig = require('./production');
 const devConfig = require('./development');
 
 let config = {};
 
-switch (process.env.ENV) {
+switch (process.env.ENV) { // eslint-disable-line no-process-env
 case 'production':
   config = prodConfig;
   break;

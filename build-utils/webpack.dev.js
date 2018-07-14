@@ -1,12 +1,8 @@
-/* eslint import/no-nodejs-modules: "off" */
-/* eslint no-sync: "off" */
-
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs'); // eslint-disable-line import/no-nodejs-modules
+const path = require('path'); // eslint-disable-line import/no-nodejs-modules
 const webpack = require('webpack');
 const commonPaths = require('./common-paths');
 
-const devPort = 3001;
 const config = {
   mode: 'development',
   entry: {
@@ -41,10 +37,10 @@ const config = {
   ],
   devServer: {
     https: true,
-    cert: fs.readFileSync(path.join(commonPaths.certsPath, 'cert.pem')),
-    key: fs.readFileSync(path.join(commonPaths.certsPath, 'key.pem')),
+    cert: fs.readFileSync(path.join(commonPaths.certsPath, 'cert.pem')), // eslint-disable-line no-sync
+    key: fs.readFileSync(path.join(commonPaths.certsPath, 'key.pem')), // eslint-disable-line no-sync
     host: 'localhost',
-    port: devPort,
+    port: 3001,
     historyApiFallback: true,
     hot: true,
     open: true

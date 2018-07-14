@@ -1,19 +1,14 @@
-/* eslint no-sync: "off" */
-/* eslint no-console: "off" */
-/* eslint no-process-exit: "off" */
-/* eslint import/no-nodejs-modules: "off" */
-
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs'); // eslint-disable-line import/no-nodejs-modules
+const path = require('path'); // eslint-disable-line import/no-nodejs-modules
 const rfs = require('rotating-file-stream');
 const morgan = require('morgan');
-const config = require('../../config/index');
+const config = require('../../config/.');
 
 const logDirectory = path.join(__dirname, '..', '..', 'log');
 const logger = {};
 
-if(!fs.existsSync(logDirectory)) {
-  fs.mkdirSync(logDirectory);
+if(!fs.existsSync(logDirectory)) { // eslint-disable-line no-sync
+  fs.mkdirSync(logDirectory); // eslint-disable-line no-sync
 }
 
 const accessLogStream = config.env.name === 'development' ? process.stdout : rfs('access.log', {

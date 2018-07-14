@@ -1,13 +1,10 @@
-/* eslint import/no-nodejs-modules: "off" */
-/* eslint no-sync: "off" */
-
-const path = require('path');
+const path = require('path'); // eslint-disable-line import/no-nodejs-modules
 const express = require('express');
 const helmet = require('helmet');
 const expressStaticGzip = require('express-static-gzip');
 const logger = require('./utils/loggers/app');
 const appErrorHandlers = require('./utils/app_error_handlers');
-const config = require('./config/index');
+const config = require('./config/.');
 
 const app = express();
 
